@@ -7,7 +7,7 @@ const combinacao = (n, k) => {
   return fatorial(n) / (fatorial(k) * fatorial(n - k));
 };
 
-const disponibilidade = (n, k, p) => {
+export const disponibilidade = (n, k, p) => {
   let d = 0;
 
   for (let i = k; i <= n; i++) {
@@ -17,6 +17,5 @@ const disponibilidade = (n, k, p) => {
   return d.toFixed(4);
 };
 
-console.log(disponibilidade(4, 1, 0.8));
 
 

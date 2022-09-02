@@ -1,4 +1,5 @@
 import { graphConfig } from "./graphConfig.js"
+import { disponibilidade } from "./formula.js"
 
 const botaoRodar = document.querySelector("#rodar")
 
@@ -39,9 +40,8 @@ function graph2(n, k, p) {
 
     for (let i = 1; i <= n; i++) {
 
-        if (i % 2 != 0) array.push([i, disponibilidade(i, (Math.floor(i / 2) + 1), p)])
-        if (i % 2 == 0) array.push([i, disponibilidade(i, (Math.floor(i / 2)), p)])
-
+        array.push([i, disponibilidade(i, (Math.floor(i / 2) + 1), p)])
+        
     }
     
     return array
@@ -54,8 +54,6 @@ function graph3(n, k, p) {
     for (let i = 1; i <= n; i++) {
 
         array.push([i, disponibilidade(i, i, p)])
-
-
 
     }
     return array
