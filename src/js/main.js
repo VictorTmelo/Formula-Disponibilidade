@@ -30,6 +30,7 @@ function graph1(n, k) {
         }
 
     }
+
     return array
 }
 
@@ -60,6 +61,7 @@ function graph3(n, k) {
         }
 
     }
+    
     return array
 }
 
