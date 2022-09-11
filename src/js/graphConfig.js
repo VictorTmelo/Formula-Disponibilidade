@@ -2,8 +2,8 @@ export const graphConfig = (grafico1, grafico2, grafico3) => {
 
     const labels = [];
 
-    for(let i = 0; i < 10; i++){
-        labels.push(`${grafico1[i][0]}`)
+    for(let i = 0.1; i <= 1; i = i + 0.1){
+        labels.push(`${i.toFixed(1)}`)
     }
     
     const data = {
@@ -45,7 +45,7 @@ export const graphConfig = (grafico1, grafico2, grafico3) => {
                     title: {
                       display: true,
                       color: "black",
-                      text: 'N'
+                      text: 'P'
                     }
                 }
             }
