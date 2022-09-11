@@ -1,30 +1,28 @@
 export const graphConfig = (grafico1, grafico2, grafico3) => {
 
-    const labels = [];
+    const labels = montarLabels();
 
-    for(let i = 0; i < 10; i++){
-        labels.push(`${grafico1[i][0]}`)
-    }
-    
+    const [dataGrafico1, dataGrafico2, dataGrafico3] = montarDataGraficos()
+
     const data = {
         labels: labels,
         datasets: [{
             label: 'K = 1',
             backgroundColor: 'rgb(58, 235, 52)',
             borderColor: 'rgb(58, 235, 52)',
-            data: [grafico1[0][1], grafico1[1][1], grafico1[2][1], grafico1[3][1], grafico1[4][1], grafico1[5][1], grafico1[6][1], grafico1[7][1], grafico1[8][1], grafico1[9][1]]
+            data: dataGrafico1
         },
         {
             label: 'K = N / 2',
             backgroundColor: 'rgb(235, 235, 52)',
             borderColor: 'rgb(235, 235, 52)',
-            data: [grafico2[0][1], grafico2[1][1], grafico2[2][1], grafico2[3][1], grafico2[4][1], grafico2[5][1], grafico2[6][1], grafico2[7][1], grafico2[8][1], grafico2[9][1]]   
+            data: dataGrafico2
         },
         {
             label: 'K = N',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [grafico3[0][1], grafico3[1][1], grafico3[2][1], grafico3[3][1], grafico3[4][1], grafico3[5][1], grafico3[6][1], grafico3[7][1], grafico3[8][1], grafico3[9][1]]  
+            data: dataGrafico3
         }]
     };
     
@@ -51,6 +49,42 @@ export const graphConfig = (grafico1, grafico2, grafico3) => {
             }
         }
     };
+
+    function montarLabels(){
+
+        const labels = []
+
+        for(let i = 0; i < grafico1.length; i++){
+            labels.push(`${grafico1[i][0]}`)
+        }
+
+        return labels
+
+    }
+
+    function montarDataGraficos () {
+
+        const dataGrafico1 = []
+
+        const dataGrafico2 = []
+
+        const dataGrafico3 = []
+
+        for (let i = 0; i < grafico1.length; i++){
+            dataGrafico1.push(grafico1[i][1])
+        }
+    
+        for (let i = 0; i < grafico2.length; i++){
+            dataGrafico2.push(grafico2[i][1])
+        }
+    
+        for (let i = 0; i < grafico3.length; i++){
+            dataGrafico3.push(grafico3[i][1])
+        }
+
+        return [dataGrafico1, dataGrafico2, dataGrafico3]
+
+    }
 
     const myChart = new Chart(
         document.getElementById('myChart'),
