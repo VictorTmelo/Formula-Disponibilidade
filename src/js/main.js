@@ -23,14 +23,12 @@ function graph1(n, k) {
 
     const array = []
 
-    for (let i = 1; i <= n; i++) {
 
-        for(let j = 0.1; j <= 1; j = j + 0.1){
-            array.push([i, disponibilidade(i, 1, j)])
-        }
-
+    for (let j = 0.1; j <= 1; j = j + 0.1) {
+        array.push(disponibilidade(n, 1, j))
     }
 
+    console.log(array)
     return array
 }
 
@@ -39,14 +37,12 @@ function graph2(n, k) {
 
     const array = []
 
-    for (let i = 1; i <= n; i++) {
 
-        for(let j = 0.1; j <= 1; j = j + 0.1){
-            array.push([i, disponibilidade(i, (Math.floor(i / 2) + 1), j)])
-        }
-
+    for (let j = 0.1; j <= 1; j = j + 0.1) {
+        array.push(disponibilidade(n, (Math.floor(n / 2) + 1), j))
     }
-    
+
+
     return array
 }
 
@@ -54,14 +50,12 @@ function graph3(n, k) {
 
     const array = []
 
-    for (let i = 1; i <= n; i++) {
 
-        for(let j = 0.1; j <= 1; j = j + 0.1){
-            array.push([i, disponibilidade(i, i, j)])
-        }
-
+    for (let j = 0.1; j <= 1; j = j + 0.1) {
+        array.push(disponibilidade(n, n, j))
     }
-    
+
+
     return array
 }
 

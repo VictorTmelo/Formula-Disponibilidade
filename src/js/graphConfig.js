@@ -71,15 +71,15 @@ export const graphConfig = (grafico1, grafico2, grafico3) => {
         const dataGrafico3 = []
 
         for (let i = 0; i < grafico1.length; i++){
-            dataGrafico1.push(grafico1[i][1])
+            dataGrafico1.push(grafico1[i])
         }
     
         for (let i = 0; i < grafico2.length; i++){
-            dataGrafico2.push(grafico2[i][1])
+            dataGrafico2.push(grafico2[i])
         }
     
         for (let i = 0; i < grafico3.length; i++){
-            dataGrafico3.push(grafico3[i][1])
+            dataGrafico3.push(grafico3[i])
         }
 
         return [dataGrafico1, dataGrafico2, dataGrafico3]
